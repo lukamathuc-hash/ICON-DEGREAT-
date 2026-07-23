@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Icon Degreat Business Centre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#050B1A;
+    --bg-alt:#081026;
+    --card: rgba(30,58,110,0.28);
+    --card-border: rgba(120,170,255,0.18);
+    --blue1:#2F6FFF;
+    --blue2:#7FD1FF;
+    --blue-deep:#0B2E8A;
+    --text:#EAF2FF;
+    --text-dim:#8CA3C9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Manrope',sans-serif;
+    line-height:1.55;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Sora',sans-serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    line-height:1.08;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;text-decoration:none;}
+  .eyebrow{
+    font-size:11.5px;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--blue2);font-weight:700;
+  }
+
+  /* ===== Motion background (video-style) ===== */
+  .motion-bg{
+    position:absolute;inset:0;
+    overflow:hidden;
+    z-index:0;
+  }
+  .motion-bg video{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    object-fit:cover;
+    opacity:0.5;
+  }
+  .blob{
+    position:absolute;border-radius:50%;
+    filter:blur(70px);
+    opacity:0.55;
+    animation:drift 18s ease-in-out infinite;
+  }
+  .blob-a{
+    width:480px;height:480px;
+    background:radial-gradient(circle,var(--blue1),transparent 70%);
+    top:-120px;left:-100px;
+    animation-duration:22s;
+  }
+  .blob-b{
+    width:420px;height:420px;
+    background:radial-gradient(circle,var(--blue2),transparent 70%);
+    bottom:-140px;right:-80px;
+    animation-duration:26s;
+    animation-delay:-6s;
+  }
+  .blob-c{
+    width:340px;height:340px;
+    background:radial-gradient(circle,var(--blue-deep),transparent 70%);
+    top:35%;left:40%;
+    animation-duration:20s;
+    animation-delay:-3s;
+  }
+  @keyframes drift{
+    0%,100%{transform:translate(0,0) scale(1);}
+    33%{transform:translate(30px,-20px) scale(1.08);}
+    66%{transform:translate(-24px,18px) scale(0.95);}
+  }
+  .scanlines{
+    position:absolute;inset:0;
+    background:repeating-linear-gradient(0deg,rgba(255,255,255,0.02) 0px,rgba(255,255,255,0.02) 1px,transparent 1px,transparent 3px);
+    mix-blend-mode:overlay;
+  }
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(5,11,26,0.55) 0%,rgba(5,11,26,0.75) 60%,var(--bg) 100%);
+  }
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:80px 0 60px;
+  }
+  .hero-content{position:relative;z-index:2;}
+  .logo-row{
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:34px;
+  }
+  .logo-mark{width:34px;height:34px;flex-shrink:0;}
+  .logo-word{
+    font-family:'Sora';font-weight:700;font-size:13px;letter-spacing:0.06em;
+    color:var(--text);
+  }
+  .logo-word span{display:block;font-size:9px;color:var(--text-dim);letter-spacing:0.14em;font-weight:500;}
+
+  .hero h1{font-size:15vw;max-width:600px;margin-bottom:18px;}
+  .hero p.bio{
+    color:var(--text-dim);font-size:16px;max-width:460px;margin-bottom:30px;
+  }
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-weight:700;font-size:13.5px;text-transform:uppercase;letter-spacing:0.04em;
+    padding:15px 24px;border-radius:8px;cursor:pointer;border:none;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--blue2),var(--blue1));
+    color:#05112B;
+  }
+  .btn-ghost{
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--card-border);
+    color:var(--text);
+  }
+
+  /* ===== About ===== */
+  .about{padding:56px 0 10px;position:relative;z-index:1;}
+  .about h2{font-size:26px;margin-bottom:16px;}
+  .about-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    padding:24px 22px;
+    backdrop-filter:blur(6px);
+  }
+  .about-card p{font-size:14.5px;color:var(--text-dim);margin-bottom:16px;}
+  .about-card p:last-child{margin-bottom:0;}
+  .founder-row{
+    display:flex;align-items:center;gap:12px;
+    margin-bottom:16px;
+  }
+  .founder-avatar{
+    width:44px;height:44px;border-radius:10px;flex-shrink:0;
+    background:linear-gradient(135deg,var(--blue2),var(--blue-deep));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Sora';font-weight:800;font-size:15px;color:#05112B;
+  }
+  .founder-name{font-family:'Sora';font-weight:700;font-size:14.5px;}
+  .founder-role{font-size:12px;color:var(--text-dim);}
+
+  /* ===== Categories ===== */
+  .categories{padding:50px 0 10px;}
+  .categories h2{font-size:26px;margin-bottom:6px;}
+  .categories > .wrap > p.note{color:var(--text-dim);font-size:14px;margin-bottom:24px;max-width:460px;}
+  .cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .cat-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:12px;
+    padding:20px 16px;
+    position:relative;
+    overflow:hidden;
+  }
+  .cat-card::before{
+    content:"";
+    position:absolute;top:-40%;right:-40%;
+    width:120px;height:120px;border-radius:50%;
+    background:radial-gradient(circle,rgba(127,209,255,0.25),transparent 70%);
+  }
+  .cat-num{
+    font-family:'Sora';font-size:11px;color:var(--blue2);
+    letter-spacing:0.08em;display:block;margin-bottom:10px;
+  }
+  .cat-card h3{
+    font-family:'Sora';font-weight:700;font-size:15px;margin-bottom:6px;
+  }
+  .cat-card p{font-size:12px;color:var(--text-dim);line-height:1.45;}
+
+  /* ===== Contact ===== */
+  .contact{padding:56px 0 60px;}
+  .contact h2{font-size:26px;margin-bottom:18px;}
+  .contact-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    padding:24px 22px;
+  }
+  .contact-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:13px 0;
+    border-bottom:1px solid var(--card-border);
+    font-size:13.5px;
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row .label{color:var(--text-dim);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;}
+  .contact-row .val{font-weight:700;text-align:right;}
+  .contact .btn-primary{width:100%;justify-content:center;margin-top:18px;}
+
+  footer{
+    text-align:center;padding:24px 0 40px;
+    font-size:10.5px;color:var(--text-dim);letter-spacing:0.06em;
+    border-top:1px solid var(--card-border);
+  }
+
+  @media (min-width:520px){
+    .hero h1{font-size:56px;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="motion-bg">
+    <!-- Drop your video in by uncommenting the line below and setting the file path -->
+    <!-- <video autoplay muted loop playsinline src="your-video-file.mp4"></video> -->
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
+    <div class="scanlines"></div>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="wrap hero-content">
+    <div class="logo-row">
+      <svg class="logo-mark" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8FD3FF"/>
+            <stop offset="45%" stop-color="#2F6FFF"/>
+            <stop offset="100%" stop-color="#0B2E8A"/>
+          </linearGradient>
+        </defs>
+        <polygon points="205,120 245,120 275,240 235,240" fill="url(#lg1)"/>
+        <polygon points="205,120 245,120 215,360 175,360" fill="url(#lg1)" opacity="0.85"/>
+        <path d="M 250 150 A 100 100 0 1 1 250 350" fill="none" stroke="url(#lg1)" stroke-width="26" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-word">ICON DEGREAT<span>BUSINESS CENTRE</span></div>
+    </div>
+
+    <span class="eyebrow">Juba · South Sudan</span>
+    <h1>Creative work, done at a premium standard.</h1>
+    <p class="bio">Icon Degreat Business Centre is a creative studio led by Quincy — founder of Junub Got Talent — delivering video editing, graphics design, and brand marketing for businesses and creators across South Sudan.</p>
+    <div class="cta-row">
+      <a href="https://wa.me/211928533306" class="btn btn-primary">Message on WhatsApp →</a>
+      <a href="#categories" class="btn btn-ghost">What we do</a>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <div class="about-card">
+      <div class="founder-row">
+        <div class="founder-avatar">ID</div>
+        <div>
+          <div class="founder-name">Icon Degreat</div>
+          <div class="founder-role">Founder & Creative Director</div>
+        </div>
+      </div>
+      <p>Icon Degreat Business Centre exists to give South Sudanese businesses and individuals access to premium creative work — without needing to look outside the country for it.</p>
+      <p>Founder Quincy also runs Junub Got Talent, a youth talent discovery platform, bringing real production experience into every project this studio takes on.</p>
+    </div>
+  </div>
+</section>
+
+<section class="categories" id="categories">
+  <div class="wrap">
+    <h2>What We Do</h2>
+    <p class="note">Four core services, all delivered in-house.</p>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <span class="cat-num">01</span>
+        <h3>Video Editing</h3>
+        <p>Promos, reels, event highlights, and cinematic edits for social and business use.</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">02</span>
+        <h3>Graphics Design</h3>
+        <p>Logos, posters, brand assets, and print-ready designs built for impact.</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">03</span>
+        <h3>Brand Marketing</h3>
+        <p>Positioning, messaging, and campaigns that give a business a clear identity.</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">04</span>
+        <h3>Digital Marketing</h3>
+        <p>Social media strategy, content calendars, and growth for online presence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <h2>Get In Touch</h2>
+    <div class="contact-card">
+      <div class="contact-row"><span class="label">Name</span><span class="val">Icon Degreat (Quincy)</span></div>
+      <div class="contact-row"><span class="label">Email</span><span class="val"><a href="mailto:icondegreat1210@gmail.com">icondegreat1210@gmail.com</a></span></div>
+      <div class="contact-row"><span class="label">Phone / WhatsApp</span><span class="val"><a href="tel:+211928533306">0928 533 306</a></span></div>
+      <div class="contact-row"><span class="label">Location</span><span class="val">Juba, South Sudan</span></div>
+      <a href="https://wa.me/211928533306" class="btn btn-primary">Start a Project →</a>
+    </div>
+  </div>
+</section>
+
+<footer>ICON DEGREAT BUSINESS CENTRE · JUBA, SOUTH SUDAN</footer>
+
+</body>
+</html>
